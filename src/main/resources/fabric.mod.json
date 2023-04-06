@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "pingermod",
+  "version": "${version}",
+  "name": "PingerMod",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/valer/PingerMod"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/PingerMod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "ua.valeriishymchuk.pingermod.client.PingerModClient"
+    ]
+  },
+  "mixins": [
+    "pinger.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
