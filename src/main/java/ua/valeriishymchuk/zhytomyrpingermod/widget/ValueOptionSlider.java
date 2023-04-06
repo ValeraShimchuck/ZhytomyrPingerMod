@@ -1,4 +1,4 @@
-package ua.valeriishymchuk.pingermod.widget;
+package ua.valeriishymchuk.zhytomyrpingermod.widget;
 
 import net.minecraft.client.gui.widget.SliderWidget;
 import net.minecraft.text.Text;

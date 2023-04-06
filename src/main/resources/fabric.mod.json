@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "id": "pingermod",
+  "id": "zhytomyrpingermod",
   "version": "${version}",
-  "name": "PingerMod",
+  "name": "ZhytomyrPingerMod",
   "description": "",
   "authors": [],
   "contact": {
-    "repo": "https://github.com/valer/PingerMod"
+    "repo": "https://github.com/ValeraShimchuck/ZhytomyrPingerMod.git"
   },
   "license": "All-Rights-Reserved",
-  "icon": "assets/PingerMod/icon.png",
+  "icon": "assets/ZhytomyrPingerMod/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
-      "ua.valeriishymchuk.pingermod.client.PingerModClient"
+      "ua.valeriishymchuk.zhytomyrpingermod.client.ZhytomyrPingerModClient"
     ]
   },
   "mixins": [

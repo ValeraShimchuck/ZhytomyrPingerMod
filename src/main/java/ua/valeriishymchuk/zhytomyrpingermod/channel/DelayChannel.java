@@ -1,4 +1,4 @@
-package ua.valeriishymchuk.pingermod.channel;
+package ua.valeriishymchuk.zhytomyrpingermod.channel;
 
 import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;

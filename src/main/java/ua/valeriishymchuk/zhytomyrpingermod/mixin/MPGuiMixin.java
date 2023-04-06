@@ -1,4 +1,4 @@
-package ua.valeriishymchuk.pingermod.mixin;
+package ua.valeriishymchuk.zhytomyrpingermod.mixin;
 
 import net.minecraft.client.gui.Drawable;
 import net.minecraft.client.gui.Element;
@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import ua.valeriishymchuk.pingermod.channel.DelayChannel;
-import ua.valeriishymchuk.pingermod.widget.ValueOptionSlider;
+import ua.valeriishymchuk.zhytomyrpingermod.channel.DelayChannel;
+import ua.valeriishymchuk.zhytomyrpingermod.widget.ValueOptionSlider;
 
 import java.lang.reflect.Method;
 
