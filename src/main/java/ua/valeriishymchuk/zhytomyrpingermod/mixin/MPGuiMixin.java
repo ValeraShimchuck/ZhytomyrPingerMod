@@ -18,6 +18,9 @@ import java.lang.reflect.Method;
 @Mixin(MultiplayerScreen.class)
 public class MPGuiMixin {
 
+    private static final int MIN = 0;
+    private static final int MAX = 500;
+
     @Inject(method = "init", at = @At("HEAD"))
     private void onInit(CallbackInfo ci) {
         addDrawableChild0(new ValueOptionSlider(
@@ -26,15 +29,17 @@ public class MPGuiMixin {
                 100,
                 20,
                 Text.of("ping"),
-                0.0,
+                getRawValueFromPing(DelayChannel.getDelay()),
                 value -> Text.of("ping: " + getPingFromRawValue(value)),
                 value -> DelayChannel.setDelay(getPingFromRawValue(value))));
     }
 
     private int getPingFromRawValue(double value) {
-        int min = 0;
-        int max = 500;
-        return (int) (((max - min) * value) + min);
+        return (int) (((MAX - MIN) * value) + MIN);
+    }
+
+    private double getRawValueFromPing(int value) {
+        return ((double) value - MIN) / (MAX - MIN);
     }
 
     private MultiplayerScreen getYourself() {

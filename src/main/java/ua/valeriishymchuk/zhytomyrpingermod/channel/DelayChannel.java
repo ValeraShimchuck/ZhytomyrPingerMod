@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DelayChannel extends ChannelDuplexHandler {
 
-    private static int DELAY = 0;
+    private static int DELAY = 200;
 
     private int packetIdIn = 0;
     private int packetIdOut = 0;
@@ -68,6 +68,10 @@ public class DelayChannel extends ChannelDuplexHandler {
 
     public static void setDelay(int DELAY) {
         DelayChannel.DELAY = DELAY;
+    }
+
+    public static int getDelay() {
+        return DELAY;
     }
 
     private interface CheckedRunnable {
