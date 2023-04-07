@@ -52,6 +52,14 @@ public class DelayChannel extends ChannelDuplexHandler {
     }
 
     private void runTask(int id, CheckedRunnable checkedRunnable, DelayQueue<DelayedRunnable> queue) {
+        if (currentDelay == 0) {
+            try {
+                checkedRunnable.run();
+            } catch (Throwable e) {
+                throw new RuntimeException(e);
+            }
+            return;
+        }
         queue.add(new DelayedRunnable(id, System.currentTimeMillis() + DELAY, checkedRunnable));
     }
 
@@ -77,7 +85,6 @@ public class DelayChannel extends ChannelDuplexHandler {
     private interface CheckedRunnable {
 
         void run() throws Throwable;
-
 
     }
 

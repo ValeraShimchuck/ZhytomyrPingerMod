@@ -19,7 +19,7 @@ import java.lang.reflect.Method;
 public class MPGuiMixin {
 
     private static final int MIN = 0;
-    private static final int MAX = 500;
+    private static final int MAX = 1000;
 
     @Inject(method = "init", at = @At("HEAD"))
     private void onInit(CallbackInfo ci) {
@@ -30,8 +30,8 @@ public class MPGuiMixin {
                 20,
                 Text.of("ping"),
                 getRawValueFromPing(DelayChannel.getDelay()),
-                value -> Text.of("ping: " + getPingFromRawValue(value)),
-                value -> DelayChannel.setDelay(getPingFromRawValue(value))));
+                value -> Text.of("ping: " + (getPingFromRawValue(value))),
+                value -> DelayChannel.setDelay(getPingFromRawValue(value) / 2)));
     }
 
     private int getPingFromRawValue(double value) {
